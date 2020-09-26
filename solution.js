@@ -1,4 +1,5 @@
 exports.rootPost = (req, res) => {
+  console.log(123123);
   const result = [];
   req.body.payload.forEach((show) => {
     if (!show.drm || !show.episodeCount) return;
@@ -8,5 +9,5 @@ exports.rootPost = (req, res) => {
       title: show.title,
     });
   });
-  res.send(result);
+  res.send({ response: result });
 };
